@@ -1,21 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Fajar I. A. - Portfolio</title>
     <link href="dist/output.css" rel="stylesheet" />
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark")
+      } else {
+        document.documentElement.classList.remove("dark")
+      }
+    </script>
   </head>
   <body>
     <!-- Header Section -->
     <header
-      class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10"
+      class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent"
     >
       <div class="container">
-        <div class="flex items-center justify-between relative">
+        <div class="relative flex items-center justify-between">
           <div class="px-4">
-            <a href="#home" class="font-bold text-lg text-primary block py-6"
+            <a href="#home" class="block py-6 text-lg font-bold text-primary"
               >FA</a
             >
           </div>
@@ -24,48 +35,48 @@
               id="hamburger"
               name="hamburger"
               type="button"
-              class="block absolute right-4 lg:hidden"
+              class="absolute right-4 block lg:hidden"
             >
               <span
-                class="hamburger-line transition duration-300 ease-in-out origin-top-left"
+                class="hamburger-line origin-top-left transition duration-300 ease-in-out"
               ></span>
               <span
                 class="hamburger-line transition duration-300 ease-in-out"
               ></span>
               <span
-                class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"
+                class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"
               ></span>
             </button>
             <nav
               id="nav-menu"
-              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none"
+              class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark dark:shadow-secondary lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none lg:dark:bg-transparent"
             >
               <ul class="block lg:flex">
                 <li class="group">
                   <a
                     href="#home"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
                     >Home</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#portfolio"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
                     >Portfolio</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#about"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
                     >About</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#contact"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
                     >Contact</a
                   >
                 </li>
@@ -73,9 +84,25 @@
                   <a
                     href="https://fajarihsanadinugroho.wordpress.com/"
                     target="_blank"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
                     >Blog</a
                   >
+                </li>
+                <li class="mt-3 flex items-center pl-8 lg:mt-0">
+                  <div class="flex">
+                    <span class="mr-2 text-sm text-secondary">light</span>
+                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                    <label for="dark-toggle">
+                      <div
+                        class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-secondary p-1"
+                      >
+                        <div
+                          class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-200 ease-in-out"
+                        ></div>
+                      </div>
+                    </label>
+                    <span class="ml-2 text-sm text-secondary">dark</span>
+                  </div>
                 </li>
               </ul>
             </nav>
@@ -85,22 +112,24 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-36 pb-32">
+    <section id="home" class="pt-36 pb-32 dark:bg-dark">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full self-center px-4">
             <h1 class="text-base font-semibold text-primary md:text-xl">
               Welcome to My Portfolio
             </h1>
-            <h2 class="font-bold text-4xl mt-1 text-dark lg:text-5xl">
+            <h2
+              class="mt-1 text-4xl font-bold text-dark dark:text-white lg:text-5xl"
+            >
               Fajar Ihsan Adinugroho
             </h2>
             <h3
-              class="font-medium text-secondary text-lg mb-5 mt-1 lg:text-2xl"
+              class="mb-5 mt-1 text-lg font-medium text-secondary lg:text-2xl"
             >
-              Backend Developer
+              Web Developer
             </h3>
-            <p class="font-medium text-secondary mb-10 leading-relaxed">
+            <p class="mb-10 font-medium leading-relaxed text-secondary">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aut
               velit dolores laboriosam, iste asperiores alias pariatur sint,
               harum dolore, recusandae et. Assumenda dolores non natus eaque
@@ -108,7 +137,7 @@
             </p>
             <a
               href="#"
-              class="bg-primary text-base font-semibold text-white rounded-full py-3 px-8 hover:shadow-lg hover:opacity-70 transition duration-200 ease-in-out"
+              class="rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-200 ease-in-out hover:opacity-70 hover:shadow-lg"
               >Learn more</a
             >
           </div>
@@ -122,14 +151,14 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="pt-36 pb-16 bg-slate-50">
+    <section id="portfolio" class="bg-slate-50 pt-36 pb-16 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
-          <div class="max-w-xl mx-auto text-center mb-16">
-            <h4 class="font-semibold text-lg text-primary mb-2 uppercase">
+          <div class="mx-auto mb-16 max-w-xl text-center">
+            <h4 class="mb-2 text-lg font-semibold uppercase text-primary">
               Portfolio
             </h4>
-            <p class="font-medium text-md text-secondary md:text-lg">
+            <p class="text-md font-medium text-secondary md:text-lg">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime
               veniam cum tempore quam neque autem eveniet voluptatem nesciunt,
               corporis adipisci!
@@ -137,71 +166,87 @@
           </div>
         </div>
         <div
-          class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto"
+          class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12"
         >
           <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
+            <div class="overflow-hidden rounded-md shadow-md">
               <img
                 src="dist/img/portfolio/test.jpg"
                 alt="test1"
                 width="w-full"
               />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Project 1</h3>
-            <p class="font-medium text-base text-secondary">
+            <h3
+              class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"
+            >
+              Project 1
+            </h3>
+            <p class="text-base font-medium text-secondary">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias,
               atque?
             </p>
           </div>
           <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
+            <div class="overflow-hidden rounded-md shadow-md">
               <img
                 src="dist/img/portfolio/test.jpg"
                 alt="test2"
                 width="w-full"
               />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Project 2</h3>
-            <p class="font-medium text-base text-secondary">
+            <h3
+              class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"
+            >
+              Project 2
+            </h3>
+            <p class="text-base font-medium text-secondary">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias,
               atque?
             </p>
           </div>
           <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
+            <div class="overflow-hidden rounded-md shadow-md">
               <img
                 src="dist/img/portfolio/test.jpg"
                 alt="test3"
                 width="w-full"
               />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Project 3</h3>
-            <p class="font-medium text-base text-secondary">
+            <h3
+              class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"
+            >
+              Project 3
+            </h3>
+            <p class="text-base font-medium text-secondary">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias,
               atque?
             </p>
           </div>
           <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
+            <div class="overflow-hidden rounded-md shadow-md">
               <img
                 src="dist/img/portfolio/test.jpg"
                 alt="test4"
                 width="w-full"
               />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Project 4</h3>
-            <p class="font-medium text-base text-secondary">
+            <h3
+              class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"
+            >
+              Project 4
+            </h3>
+            <p class="text-base font-medium text-secondary">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias,
               atque?
             </p>
           </div>
         </div>
         <div class="w-full px-4">
-          <div class="max-w-xl mx-auto text-center mb-16">
-            <h4 class="font-semibold text-lg text-primary mb-2 uppercase">
+          <div class="mx-auto mb-16 max-w-xl text-center">
+            <h4 class="mb-2 text-lg font-semibold uppercase text-primary">
               Tech
             </h4>
-            <p class="font-medium text-md text-secondary md:text-lg">
+            <p class="text-md font-medium text-secondary md:text-lg">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime
               veniam cum tempore quam neque autem eveniet voluptatem nesciunt,
               corporis adipisci!
@@ -210,32 +255,32 @@
               <img
                 src="dist/img/tech/golang.svg"
                 alt="golang"
-                class="max-w-[120px] mx-4 py-4"
+                class="mx-4 max-w-[120px] py-4"
               />
               <img
                 src="dist/img/tech/js.svg"
                 alt="js"
-                class="max-w-[120px] mx-4 py-4"
+                class="mx-4 max-w-[120px] py-4"
               />
               <img
                 src="dist/img/tech/nodejs.svg"
                 alt="js"
-                class="max-w-[120px] mx-4 py-4"
+                class="mx-4 max-w-[120px] py-4"
               />
               <img
                 src="dist/img/tech/reactjs.svg"
                 alt="js"
-                class="max-w-[120px] mx-4 py-4"
+                class="mx-4 max-w-[120px] py-4"
               />
               <img
                 src="dist/img/tech/postgre.svg"
                 alt="js"
-                class="max-w-[120px] mx-4 py-4"
+                class="mx-4 max-w-[120px] py-4"
               />
               <img
                 src="dist/img/tech/mongodb.svg"
                 alt="js"
-                class="max-w-[120px] mx-4 py-4"
+                class="mx-4 max-w-[120px] py-4"
               />
             </div>
           </div>
@@ -244,25 +289,25 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="pt-36 pb-32 bg-slate-100">
+    <section id="about" class="bg-slate-100 pt-36 pb-32 dark:bg-slate-700">
       <div class="container">
         <div class="flex flex-wrap">
           <!-- About -->
-          <div class="w-full px-4 mb-10 lg:w-1/2">
-            <h4 class="font-bold uppercase text-primary text-lg mb-3">
+          <div class="mb-10 w-full px-4 lg:w-1/2">
+            <h4 class="mb-3 text-lg font-bold uppercase text-primary">
               About Me
             </h4>
-            <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">
+            <p class="max-w-xl text-base font-medium text-secondary lg:text-lg">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
               laborum quos culpa perferendis quasi eveniet libero.
             </p>
           </div>
           <!-- Contact -->
           <div class="w-full px-4 lg:w-1/2">
-            <h4 class="font-bold uppercase text-primary text-lg mb-3">
+            <h4 class="mb-3 text-lg font-bold uppercase text-primary">
               Social Media
             </h4>
-            <p class="font-medium text-base text-secondary mb-6 lg:text-lg">
+            <p class="mb-6 text-base font-medium text-secondary lg:text-lg">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum
               suscipit beatae, mollitia error minima consectetur? Eum.
             </p>
@@ -271,7 +316,7 @@
               <a
                 href="https://github.com/fajarihsan21"
                 target="_blank"
-                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
               >
                 <svg
                   role="img"
@@ -290,7 +335,7 @@
               <a
                 href="https://www.linkedin.com/in/fajarihsanadinugroho/"
                 target="_blank"
-                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
               >
                 <svg
                   role="img"
@@ -309,7 +354,7 @@
               <a
                 href="https://www.facebook.com/fajar.ihsan.94"
                 target="_blank"
-                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
               >
                 <svg
                   role="img"
@@ -328,7 +373,7 @@
               <a
                 href="https://www.instagram.com/fajarihsan21/"
                 target="_blank"
-                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
               >
                 <svg
                   role="img"
@@ -347,7 +392,7 @@
               <a
                 href="https://fajarihsanadinugroho.wordpress.com/"
                 target="_blank"
-                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
               >
                 <svg
                   role="img"
@@ -369,54 +414,60 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="pt-36 pb-32 bg-slate-700">
+    <section id="contact" class="bg-slate-700 pt-36 pb-32 dark:bg-slate-400">
       <div class="container">
         <div class="w-full px-4">
-          <div class="max-w-xl mx-auto text-center mb-16">
-            <h4 class="font-semibold text-lg text-primary mb-2 uppercase">
+          <div class="mx-auto mb-16 max-w-xl text-center">
+            <h4 class="mb-2 text-lg font-semibold uppercase text-primary">
               Contact Me
             </h4>
-            <p class="font-medium text-md text-white md:text-lg">
+            <p class="text-md font-medium text-white dark:text-dark md:text-lg">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro,
               cupiditate!
             </p>
           </div>
         </div>
         <form>
-          <div class="w-full lg:w-2/3 mx-auto">
-            <div class="w-full px-4 mb-8">
-              <label for="name" class="text-base text-slate-200 font-bold"
+          <div class="mx-auto w-full lg:w-2/3">
+            <div class="mb-8 w-full px-4">
+              <label
+                for="name"
+                class="text-base font-bold text-slate-200 dark:text-slate-800"
                 >Name</label
               >
               <input
                 type="text"
                 id="name"
-                class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
+                class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary dark:text-slate-800"
               />
             </div>
-            <div class="w-full px-4 mb-8">
-              <label for="email" class="text-base text-white font-bold"
+            <div class="mb-8 w-full px-4">
+              <label
+                for="email"
+                class="text-base font-bold text-white dark:text-slate-800"
                 >Email</label
               >
               <input
                 type="email"
                 id="email"
-                class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
+                class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary dark:text-slate-800"
               />
             </div>
-            <div class="w-full px-4 mb-8">
-              <label for="message" class="text-base text-white font-bold"
+            <div class="mb-8 w-full px-4">
+              <label
+                for="message"
+                class="text-base font-bold text-white dark:text-slate-800"
                 >Message</label
               >
               <textarea
                 type="text"
                 id="message"
-                class="w-full h-32 bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
+                class="h-32 w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary dark:text-slate-800"
               ></textarea>
             </div>
             <div class="w-full px-4">
               <button
-                class="text-base font-semibold text-white bg-primary py-3 rounded-full w-full hover:shadow-lg hover:opacity-70 transition duration-500 ease-in-out"
+                class="w-full rounded-full bg-primary py-3 text-base font-semibold text-white transition duration-500 ease-in-out hover:opacity-70 hover:shadow-lg"
               >
                 Send
               </button>
@@ -430,34 +481,34 @@
     <footer class="bg-dark pt-24 pb-12">
       <div class="container">
         <div class="flex flex-wrap">
-          <div class="w-full px-4 mb-12 md:w-1/2">
-            <h3 class="font-semibold text-xl text-white mb-5">Navigation</h3>
+          <div class="mb-12 w-full px-4 md:w-1/2">
+            <h3 class="mb-5 text-xl font-semibold text-white">Navigation</h3>
             <ul class="text-light">
               <li>
                 <a
                   href="#home"
-                  class="inline-block text-base hover:text-primary mb-3"
+                  class="mb-3 inline-block text-base hover:text-primary"
                   >Home</a
                 >
               </li>
               <li>
                 <a
                   href="#portfolio"
-                  class="inline-block text-base hover:text-primary mb-3"
+                  class="mb-3 inline-block text-base hover:text-primary"
                   >Portfolio</a
                 >
               </li>
               <li>
                 <a
                   href="#about"
-                  class="inline-block text-base hover:text-primary mb-3"
+                  class="mb-3 inline-block text-base hover:text-primary"
                   >About</a
                 >
               </li>
               <li>
                 <a
                   href="#contact"
-                  class="inline-block text-base hover:text-primary mb-3"
+                  class="mb-3 inline-block text-base hover:text-primary"
                   >Contact</a
                 >
               </li>
@@ -465,25 +516,25 @@
                 <a
                   href="https://fajarihsanadinugroho.wordpress.com/"
                   target="_blank"
-                  class="inline-block text-base hover:text-primary mb-3"
+                  class="mb-3 inline-block text-base hover:text-primary"
                   >Blog</a
                 >
               </li>
             </ul>
           </div>
-          <div class="w-full px-4 mb-12 text-light md:w-1/2">
-            <h3 class="font-bold text-2xl mb-2 text-white">Email Me At</h3>
+          <div class="mb-12 w-full px-4 text-light md:w-1/2">
+            <h3 class="mb-2 text-2xl font-bold text-white">Email Me At</h3>
             <p>fajarihsanadinugroho21@gmail.com</p>
           </div>
         </div>
 
-        <div class="w-full pt-10 border-t border-slate-700">
-          <div class="flex items-center justify-center mb-5">
+        <div class="w-full border-t border-slate-700 pt-10">
+          <div class="mb-5 flex items-center justify-center">
             <!-- Github -->
             <a
               href="https://github.com/fajarihsan21"
               target="_blank"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
             >
               <svg
                 role="img"
@@ -502,7 +553,7 @@
             <a
               href="https://www.linkedin.com/in/fajarihsanadinugroho/"
               target="_blank"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
             >
               <svg
                 role="img"
@@ -521,7 +572,7 @@
             <a
               href="https://www.facebook.com/fajar.ihsan.94"
               target="_blank"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
             >
               <svg
                 role="img"
@@ -540,7 +591,7 @@
             <a
               href="https://www.instagram.com/fajarihsan21/"
               target="_blank"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
             >
               <svg
                 role="img"
@@ -556,7 +607,7 @@
               </svg>
             </a>
           </div>
-          <p class="font-medium text-xs text-secondary text-center">
+          <p class="text-center text-xs font-medium text-secondary">
             Made by
             <a
               href="https://www.instagram.com/fajarihsan21/"
@@ -574,6 +625,14 @@
         </div>
       </div>
     </footer>
+
+    <!-- Back to Top -->
+    <a
+      href="#home"
+      id="to-top"
+      class="fixed bottom-4 right-4 z-[9999] hidden h-14 w-14 items-center justify-center rounded-full bg-primary p-4 hover:animate-pulse"
+      ><span class="mt-2 block h-5 w-5 rotate-45 border-t-2 border-l-2"></span
+    ></a>
 
     <script src="dist/js/script.js"></script>
   </body>
